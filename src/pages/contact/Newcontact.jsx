@@ -1,18 +1,18 @@
-import "./newRoom.scss";
+import React, { useState, useEffect } from 'react';
+import "./newContact.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
-import { useState } from "react";
 import { roomInputs } from "../../formSource";
 import useFetch from "../../hooks/useFetch";
 import axios from "axios";
 
-const NewRoom = () => {
+const NewContact = () => {
   const [info, setInfo] = useState({});
   const [hotelId, setHotelId] = useState(undefined);
   const [rooms, setRooms] = useState([]);
 
-  const { data, loading, error, } = useFetch(`http://localhost:5000/api/hotels`);
-
+  const { data, loading, error, } = useFetch("http://localhost:5000/api/contact/getAll");
+console.log(data)
   const handleChange = (e) => {
     setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
@@ -21,7 +21,7 @@ const NewRoom = () => {
     e.preventDefault();
     const roomNumbers = rooms.split(",").map((room) => ({ number: room }));
     try {
-      await axios.post(`http://localhost:5000/api/rooms//${hotelId}`, { ...info, roomNumbers });
+      await axios.post(`http://localhost:5000/api/rooms/${hotelId}`, { ...info, roomNumbers });
     } catch (err) {
       console.log(err);
     }
@@ -34,7 +34,7 @@ const NewRoom = () => {
       <div className="newContainer">
         <Navbar />
         <div className="top">
-          <h1>Add New Room</h1>
+          <h1>Add New Contact</h1>
         </div>
         <div className="bottom">
           <div className="right">
@@ -51,7 +51,7 @@ const NewRoom = () => {
                 </div>
               ))}
               <div className="formInput">
-                <label>Rooms</label>
+                <label>Contact</label>
                 <textarea
                   onChange={(e) => setRooms(e.target.value)}
                   placeholder="give comma between room numbers."
@@ -80,4 +80,4 @@ const NewRoom = () => {
   );
 };
 
-export default NewRoom;
+export default NewContact;

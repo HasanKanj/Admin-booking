@@ -39,16 +39,7 @@ const List = () => {
       method: "Cash on Delivery",
       status: "Pending",
     },
-    {
-      id: 2357741,
-      product: "Razer Blade 15",
-      img: "https://m.media-amazon.com/images/I/71wF7YDIQkL._AC_UY327_FMwebp_QL65_.jpg",
-      customer: "Jane Smith",
-      date: "1 March",
-      amount: 920,
-      method: "Online",
-      status: "Approved",
-    },
+    
     {
       id: 2342355,
       product: "ASUS ROG Strix",

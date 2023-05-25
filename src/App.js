@@ -4,14 +4,15 @@ import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import New from "./pages/newHotel/NewHotel";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { productInputs, userInputs } from "./formSource";
+import {  userInputs } from "./formSource";
 import "./style/dark.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/AuthContext";
-import { userColumns,hotelColumns, roomColumns } from "./datatablesource";
+import { userColumns,hotelColumns, roomColumns, contactColumns } from "./datatablesource";
 import NewHotel from "./pages/newHotel/NewHotel";
 import NewRoom from "./pages/newRoom/NewRoom";
+import NewContact from "./pages/contact/Newcontact";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -104,6 +105,28 @@ function App() {
                 }
               />
             </Route>
+
+            <Route path="contact">
+              <Route index element={ <ProtectedRoute>
+                    <List columns={contactColumns}/>
+                  </ProtectedRoute>} />
+                  <Route
+                path=":productId"
+                element={
+                  <ProtectedRoute>
+                    <Single />{" "}
+                  </ProtectedRoute>
+                }
+              />
+               <Route
+                path="new"
+                element={
+                  <ProtectedRoute>
+                    <NewContact  />
+                  </ProtectedRoute>
+                }
+              />
+              </Route>
           </Route>
         </Routes>
       </BrowserRouter>

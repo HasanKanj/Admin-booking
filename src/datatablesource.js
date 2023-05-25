@@ -1,5 +1,5 @@
 export const userColumns = [
-  { field: "_id", headerName: "ID", width: 70 },
+  { field: "_id", headerName: "ID", width: 150 },
   {
     field: "user",
     headerName: "User",
@@ -97,5 +97,29 @@ export const roomColumns = [
     field: "maxPeople",
     headerName: "Max People",
     width: 100,
+  },
+];
+
+export const contactColumns = [
+  { field: "_id", headerName: "ID", width: 70 },
+  {
+    field: "name",
+    headerName: "Name",
+    width: 100,
+  },
+  {
+    field: "email",
+    headerName: "Email",
+    width: 200,
+  },
+  {
+    field: "phoneNumber",
+    headerName: "Phone",
+    width: 100,
+  },
+  {
+    field: "message",
+    headerName: "Message",
+    width: 300,
   },
 ];

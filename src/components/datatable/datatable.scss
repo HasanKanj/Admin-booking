@@ -5,7 +5,7 @@
   .datatableTitle{
     width: 100%;
     font-size: 24px;
-    color: gray;
+    color:rgb(60, 196, 151);
     margin-bottom: 10px;
     display: flex;
     align-items: center;
@@ -21,6 +21,31 @@
       border-radius: 5px;
       cursor: pointer;
     }
+  }
+  .editButton {
+    background-color:rgb(60, 196, 151);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .saveButton,
+  .cancelButton {
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .saveButton:hover,
+  .cancelButton:hover {
+    background-color: #1e87db;
+  }
+  .editButton:hover {
+    background-color: #45a049;
   }
 
   .cellWithImg {
@@ -76,3 +101,5 @@
     }
   }
 }
+
+

@@ -1,7 +1,6 @@
 import "./widget.scss";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
 
@@ -9,7 +8,7 @@ const Widget = ({ type }) => {
   let data;
 
   //temporary
-  const amount = 100;
+  const amount = 20;
   const diff = 20;
 
   switch (type) {
@@ -29,11 +28,11 @@ const Widget = ({ type }) => {
         ),
       };
       break;
-    case "order":
+    case "Hotels":
       data = {
-        title: "ORDERS",
+        title: "Hotels",
         isMoney: false,
-        link: "View all orders",
+        link: "View all Hotels",
         icon: (
           <ShoppingCartOutlinedIcon
             className="icon"
@@ -45,11 +44,11 @@ const Widget = ({ type }) => {
         ),
       };
       break;
-    case "earning":
+    case "Rooms":
       data = {
-        title: "EARNINGS",
+        title: "Rooms",
         isMoney: true,
-        link: "View net earnings",
+        link: "View all rooms",
         icon: (
           <MonetizationOnOutlinedIcon
             className="icon"
@@ -58,22 +57,7 @@ const Widget = ({ type }) => {
         ),
       };
       break;
-    case "balance":
-      data = {
-        title: "BALANCE",
-        isMoney: true,
-        link: "See details",
-        icon: (
-          <AccountBalanceWalletOutlinedIcon
-            className="icon"
-            style={{
-              backgroundColor: "rgba(128, 0, 128, 0.2)",
-              color: "purple",
-            }}
-          />
-        ),
-      };
-      break;
+    
     default:
       break;
   }
