@@ -37,6 +37,7 @@ const Datatable = ({ columns }) => {
       await axios.put(`http://localhost:5000/api/${path}/${id}`, updatedData);
       // Refresh the data after successful edit
       reFetch();
+      // Set the editRowId to null to exit the edit mode
       setEditRowId(null);
     } catch (err) {
       // Handle error
@@ -82,10 +83,7 @@ const Datatable = ({ columns }) => {
             </button>
           </>
         ) : (
-          <button
-            className="editButton"
-            onClick={() => handleEdit(params.row._id)}
-          >
+          <button className="editButton" onClick={() => handleEdit(params.row._id)}>
             Edit
           </button>
         )}
@@ -121,12 +119,13 @@ const Datatable = ({ columns }) => {
         pageSize={9}
         rowsPerPageOptions={[9]}
         checkboxSelection
+        disableSelectionOnClick  // Add this prop
         getRowId={(row) => row._id}
         components={{
           Toolbar: GridToolbar,
         }}
         onEditCellChangeCommitted={handleCellEditCommit}
-        isCellEditable={(params) => params.field !== "action"}
+        isCellEditable={(params) => params.field !== "action" && editRowId !== null}
       />
     </div>
   );

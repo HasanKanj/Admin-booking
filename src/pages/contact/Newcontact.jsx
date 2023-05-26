@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import "./newContact.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
@@ -12,7 +13,7 @@ const NewContact = () => {
   const [rooms, setRooms] = useState([]);
 
   const { data, loading, error, } = useFetch("http://localhost:5000/api/contact/getAll");
-console.log(data)
+
   const handleChange = (e) => {
     setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
@@ -27,54 +28,15 @@ console.log(data)
     }
   };
 
-  console.log(info)
   return (
     <div className="new">
       <Sidebar />
       <div className="newContainer">
         <Navbar />
         <div className="top">
-          <h1>Add New Contact</h1>
+          <Link to="/contact" className="goBackButton">Go Back</Link>
         </div>
-        <div className="bottom">
-          <div className="right">
-            <form>
-              {roomInputs.map((input) => (
-                <div className="formInput" key={input.id}>
-                  <label>{input.label}</label>
-                  <input
-                    id={input.id}
-                    type={input.type}
-                    placeholder={input.placeholder}
-                    onChange={handleChange}
-                  />
-                </div>
-              ))}
-              <div className="formInput">
-                <label>Contact</label>
-                <textarea
-                  onChange={(e) => setRooms(e.target.value)}
-                  placeholder="give comma between room numbers."
-                />
-              </div>
-              <div className="formInput">
-                <label>Choose a hotel</label>
-                <select
-                  id="hotelId"
-                  onChange={(e) => setHotelId(e.target.value)}
-                >
-                  {loading
-                    ? "loading"
-                    : data &&
-                      data.map((hotel) => (
-                        <option key={hotel._id} value={hotel._id}>{hotel.name}</option>
-                      ))}
-                </select>
-              </div>
-              <button onClick={handleClick}>Send</button>
-            </form>
-          </div>
-        </div>
+        {/* Rest of the component */}
       </div>
     </div>
   );

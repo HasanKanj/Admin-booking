@@ -1,6 +1,12 @@
 .datatable {
   height: 600px;
   padding: 20px;
+
+
+  .cellEditable {
+    background-color: #ffffff;
+  }
+
   
   .datatableTitle{
     width: 100%;
@@ -92,13 +98,20 @@
       cursor: pointer;
     }
     
+  
     .deleteButton {
-      padding: 2px 5px;
-      border-radius: 5px;
-      color: crimson;
-      border: 1px dotted rgba(220, 20, 60, 0.6);
+      background-color:rgb(219, 30, 30);
+      color: white;
+      border: none;
+      padding: 8px 5px;
+      border-radius: 4px;
       cursor: pointer;
     }
+    
+    .deleteButton:hover {
+      background-color: #6a1010;
+    }
+
   }
 }
 

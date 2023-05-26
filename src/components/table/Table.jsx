@@ -11,9 +11,9 @@ const List = () => {
   const rows = [
     {
       id: 1143155,
-      product: "Acer Nitro 5",
-      img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
-      customer: "John Smith",
+      product: "Four season",
+      img: "https://www.gpsmycity.com/img/gd_attr/30666.jpg",
+      customer: "majd khalil",
       date: "1 March",
       amount: 785,
       method: "Cash on Delivery",
@@ -21,8 +21,8 @@ const List = () => {
     },
     {
       id: 2235235,
-      product: "Playstation 5",
-      img: "https://m.media-amazon.com/images/I/31JaiPXYI8L._AC_UY327_FMwebp_QL65_.jpg",
+      product: "Small ville",
+      img: "https://cf.bstatic.com/xdata/images/hotel/max500/356468093.jpg?k=dd8221031f94a5ec0bcb578334584c5f560b8b48817fc4ea4505b658eef319f5&o=&hp=1",
       customer: "Michael Doe",
       date: "1 March",
       amount: 900,
@@ -31,9 +31,9 @@ const List = () => {
     },
     {
       id: 2342353,
-      product: "Redragon S101",
-      img: "https://m.media-amazon.com/images/I/71kr3WAj1FL._AC_UY327_FMwebp_QL65_.jpg",
-      customer: "John Smith",
+      product: "Gefinor Rotana",
+      img: "https://www.fhotels.net/Admin/PHOTOS/Hotels/2860/2860_1_18.jpg",
+      customer: "nancy wehbe",
       date: "1 March",
       amount: 35,
       method: "Cash on Delivery",
@@ -42,9 +42,9 @@ const List = () => {
     
     {
       id: 2342355,
-      product: "ASUS ROG Strix",
-      img: "https://m.media-amazon.com/images/I/81hH5vK-MCL._AC_UY327_FMwebp_QL65_.jpg",
-      customer: "Harold Carol",
+      product: "Movenpick Hotel",
+      img: "https://images.ctfassets.net/aaa9i71w44nw/6lsyx0boreuMpLjv3RQCNB/a078f2c246a5ff04ccfe385303973494/Movenpick.jpg?w=1100&q=60",
+      customer: "Ali homsi",
       date: "1 March",
       amount: 2000,
       method: "Online",
@@ -57,7 +57,7 @@ const List = () => {
         <TableHead>
           <TableRow>
             <TableCell className="tableCell">Tracking ID</TableCell>
-            <TableCell className="tableCell">Product</TableCell>
+            <TableCell className="tableCell">Appartment</TableCell>
             <TableCell className="tableCell">Customer</TableCell>
             <TableCell className="tableCell">Date</TableCell>
             <TableCell className="tableCell">Amount</TableCell>

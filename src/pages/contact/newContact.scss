@@ -1,7 +1,14 @@
 .new {
     width: 100%;
     display: flex;
-  
+    .goBackButton {
+      background-color: #ff0000; /* Replace with your desired background color */
+      color: #ffffff; /* Replace with desired text color */
+      padding: 10px 20px; /* Adjust padding as needed */
+      border-radius: 4px; /* Apply rounded corners if desired */
+      text-decoration: none; /* Remove underline from the link */
+    }
+    
     .newContainer {
       flex: 6;
   
